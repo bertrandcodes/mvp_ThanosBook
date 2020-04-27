@@ -18,8 +18,8 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // BRANDONS CODE //
 
-const routes = require( './routes.js' );
-app.use( '/media', routes );
+// const routes = require( './routes.js' );
+// app.use( '/media', routes );
 
 
 
@@ -95,6 +95,21 @@ app.post('/media/images', (req, res) => {
         console.log(err)
     }
     res.status(200).send("SUCCESS")
+})
+ 
+app.put('/search/user/:user', (req, res)=>{
+    console.log(req.params.user)
+    database.collection('users').update({username: `${req.params.user}`},
+    {
+    username: `${req.params.user}`,
+    first: req.body.first,
+    last: req.body.last,
+    birthday: req.body.birthday,
+    email: req.body.email,
+    phone: req.body.phone,
+    about: req.body.about
+})
+    .catch(err=>console.log(err))
 })
 });
 
