@@ -28,7 +28,7 @@
   "dependencies": {
     "aws": "0.0.3-2",
     "aws-sdk": "^2.662.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "axios-hook": "0.0.6",
     "bcrypt": "^4.0.1",
     "bootstrap": "^4.4.1",
